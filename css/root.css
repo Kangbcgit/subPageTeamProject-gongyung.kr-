@@ -3,4 +3,6 @@
   --header-height: 90px;
   --header-gnb-width: 200px;
   --header-font-size: 1.25rem;
+  /* main에서 등장한 값 */
+  --font-size-h1: 2.5rem;
 }

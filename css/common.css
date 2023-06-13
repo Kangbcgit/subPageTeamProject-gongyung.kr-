@@ -1,6 +1,7 @@
 /* 각 영역별 inner 기본값 width1350px, margin 통한 중양정렬 */
 .inner {
   max-width: 1350px;
+  width: 1350px;
   position: relative; /* 자식들의 absolute의 값을 지지해줄 수 있게 넣어줌. */
   margin: 0 auto;
 }
