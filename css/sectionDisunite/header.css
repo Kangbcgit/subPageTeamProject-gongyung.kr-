@@ -1,0 +1,181 @@
+.blur {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9;
+}
+.blur.active {
+  position: absolute;
+  top: 0;left: 0;
+  background: #00000040;
+  backdrop-filter: blur(2px);
+  display: block;
+}
+
+header {
+  position: relative;
+  box-shadow: 0 2px 2px 0 #ed3e3e;
+  background: #fff;
+  z-index: 10;
+}
+header * {
+  z-index: inherit;
+}
+/* header 내 common 사항 */
+header a {
+  align-items: center;
+  justify-content: center;
+  font-size: var(--header-font-size);
+  font-weight: 500;
+}
+header .wrap-gnb a:hover,
+header .wrap-gnb .wrap-sub_menu a:hover  {
+  color: #ed3e3e;
+  font-weight: 700;
+}
+/* common 끝 */
+header .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header-height);
+  padding: 0 2rem;
+}
+header .inner .wrap-logo {
+  
+}
+header .inner .wrap-gnb {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  height: var(--header-height);
+}
+header .inner .wrap-gnb > a {
+  display: flex;
+  width: var(--header-gnb-width);
+  height: 100%;
+}
+/* gnb hover submenu */
+header .inner .wrap-gnb .wrap-sub_menu {
+  position: absolute;
+  top: var(--header-height);
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  height: 0;
+  overflow: hidden;
+  background: #fff;
+  transition: height 0.3s;
+  z-index: inherit;
+  box-shadow: inset 0 6px 2px -4px #ed3e3e;
+  border: 1px solid #ed3e3e;
+  border-top: none;
+}
+
+/* gnb hover 주의사항 hover넣을때도 선택자 우선순위 신경써야함*/
+header .inner .wrap-gnb:hover .wrap-sub_menu {
+  height: calc(var(--header-height) * 3);
+}
+.wrap-sub_menu > div {
+  height: fit-content;
+}
+.wrap-sub_menu > div a {
+  display: flex;
+  width: var(--header-gnb-width);
+  height: var(--header-height);
+}
+/* 버거버튼 */
+header .inner .burger {
+  position: relative;
+  display: none;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+header .inner .burger .line {
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  background: #ed3e3e;
+  transition: .3s;
+}
+.burger .line1 {
+  left: 0;
+  top: 0;
+}
+.burger .line2 {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.burger .line3 {
+  left: 0;
+  bottom: 0;
+}
+/* burger js active toggle*/
+.burger.active.line1 {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+.burger.active.line2 {
+  opacity: 0;
+}
+.burger.active.line3 {
+  bottom: 50%;
+  transform: translateY(50%) rotate(-45deg);
+}
+/* burgermenu */
+.burger-menu {
+  position: absolute;
+  top: var(--header-height);
+  width: 100%;
+  left: 0;
+  max-height: 0;
+  overflow: auto;
+  box-shadow: inset 0 6px 2px -4px #ed3e3e;
+  background: #fff;
+  border: 1px solid #ed3e3e;
+  transition: max-height .3s;
+  z-index: 10;
+}
+.burger-menu.active {
+  max-height: 720px;
+}
+.burger-menu > .title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  width: 100%;
+  border: 1px solid #ed3e3e;
+  font-weight: 500;
+  font-size: var(--header-font-size);
+  padding: 0 2rem;
+  cursor: pointer;
+  overflow: hidden;
+}
+.burger-menu .title i {
+  font-size: 2rem;
+  color: #ed3e3e;
+}
+.burger-menu .wrap-slide {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s;
+}
+.burger-menu .wrap-slide.active {
+  max-height: calc(var(--header-height) * 3);
+}
+.burger-menu .wrap-slide a {
+  display: flex;
+  justify-content: start;
+  padding-left: 2rem;
+  height: var(--header-height);
+}
+.burger-menu .title:hover,
+.burger-menu .wrap-slide a:hover {
+  color: #ed3e3e;
+  font-weight: 700;
+}

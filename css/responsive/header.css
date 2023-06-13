@@ -1,0 +1,19 @@
+@media (max-width: 768px) {
+  header .inner {
+    justify-content: end;
+  }
+  header .inner .wrap-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  header .inner .wrap-gnb {
+    display: none;
+  }
+  header .inner .wrap-icon-map {
+    display: none;
+  }
+  header .inner .burger {
+    display: block;
+  }
+}

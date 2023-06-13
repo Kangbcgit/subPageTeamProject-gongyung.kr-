@@ -1,0 +1,6 @@
+:root {
+  /* header에서 등장한 값 */
+  --header-height: 90px;
+  --header-gnb-width: 200px;
+  --header-font-size: 1.25rem;
+}
