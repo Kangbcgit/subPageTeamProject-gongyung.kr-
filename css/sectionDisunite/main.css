@@ -123,7 +123,7 @@ main .notice_board .button-tab {
   height: 25px;
 }
 main .notice_board .button-tab i {
-  font-size: var(--header-font-size);));
+  font-size: var(--header-font-size);
 }
 main .notice_board .button-tab .left{
   margin-right: 1rem;
