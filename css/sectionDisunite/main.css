@@ -10,18 +10,19 @@ main .inner {
   /* border: 1px solid red; */
 }
 
-main .inner aside {
-  position: absolute;
-  right: calc(100% + 17.5px);
-  width: 250px;
-  height: 100px;
-  border: 1px solid #000;
-}
 main .inner .notice_board h1 {
   display: block;
   width: 100%;
   padding: 2rem 0 3rem 1rem;
   font-size: var(--font-size-h1);
+}
+main .inner .notice_board .wrap-img {
+  width: 100%;
+}
+.notice_board .wrap-img img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 main .inner .notice_board .wrap-img {
   margin-bottom: 5rem;

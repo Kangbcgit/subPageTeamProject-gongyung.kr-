@@ -1,0 +1,60 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css);
+@media (max-width:768px) {
+  main .inner {
+    padding: 0 5%;
+  }
+  main .inner .notice_board ul {
+    height: calc(50px * 12);
+  }
+  main .inner .notice_board h1 {
+    text-align: center;
+  }
+  main ul li a.post_title, main ul li span.post_order, main ul li span{
+    font-size: var(--font-size-small);
+  }
+  main .inner .notice_board ul li {
+    flex-wrap: wrap;
+  }
+  main .inner .notice_board ul li span, 
+  main .inner .notice_board ul li a {
+    /* border: 1px solid #000; */
+    height: 50%;
+  }
+  main ul li span.post_order {
+    display: none;
+  }
+  main ul li a.post_title {
+    width: 100%;
+  }
+  main ul li span.post_writer{
+    width: 27.5%;
+    margin-right: 0;
+  }
+  main ul li span.post_writer::before {
+    content: "\f044";
+    font-family: "FontAwesome";
+    margin-right: 1%;
+  }
+  main ul li span.post_date {
+    width: 20%;
+    margin-right: 2%;
+  }
+  main ul li span.post_date::before {
+    content: "\f073";
+    font-family: "FontAwesome";
+    margin-right: 1%;
+  }
+  main ul li span.post_thumbs_up {
+    width: 20%;
+    float: left;
+    justify-content: start;
+  }
+  main ul li span.post_thumbs_up::before {
+    content: "\f087";
+    font-family: "FontAwesome";
+    margin-right: 1%;
+  }
+  main .notice_board .button-tab .wrap-tab_number .button-page {
+    width: 30px;
+  }
+}

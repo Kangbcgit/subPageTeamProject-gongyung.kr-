@@ -39,15 +39,16 @@ window.onload = function () {
       if (!e.target.classList.contains('fa')) {
         angleChanger(e.target.lastElementChild);
         for (let index of burgerTitle) {
-          index.nextElementSibling.classList.remove('active');
+          e.target.nextElementSibling !== index.nextElementSibling? index.nextElementSibling.classList.remove('active') : '';
         }
-        e.target.nextElementSibling.classList.add('active');
+        e.target.nextElementSibling.classList.toggle('active');
       } else {
         angleChanger(e.target);
         for (let index of burgerTitle) {
-          index.nextElementSibling.classList.remove('active');
+          e.target.parentElement.nextElementSibling !== index.nextElementSibling ? index.nextElementSibling.classList.remove('active') : '';
         }
-        e.target.parentElement.nextElementSibling.classList.add('active');
+        e.target.parentElement.nextElementSibling.classList.toggle('active');
+        console.log(e.target.parentElement.nextElementSibling);
       }
     });
   }
@@ -169,5 +170,16 @@ window.onload = function () {
   //   if (window.scrollY > 0) {
   //     document.querySelector('header').style.cssText = `position: fixed; top: 0; width: 100%;`;
   //   }
-  // });
+  // }); 
+  // resize event 반응형 
+  if (window.innerWidth < 768) {
+    document.querySelector('ul > .top').style.cssText = 'display: none;'
+  }
+  window.addEventListener('resize', function () {
+    if (window.innerWidth < 768) {
+      document.querySelector('ul > .top').style.cssText = 'display: none;'
+    } else {
+      document.querySelector('ul > .top').style.cssText = 'display: flex;'
+    }
+  });
 }
