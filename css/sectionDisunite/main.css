@@ -128,8 +128,15 @@ main .notice_board .button-tab {
   /* border: 1px solid #000; */
   height: 25px;
 }
-main .notice_board .button-tab i {
-  font-size: var(--header-font-size);
+main .notice_board .button-tab i.fa {
+  font-size: var(--font-size-h1);
+  display: inline-block
+  /* width: 5%; */
+}
+main .notice_board .button-tab i.fa::before {
+  display: block;
+  width: 30px;
+  text-align: center;
 }
 main .notice_board .button-tab .left{
   margin-right: 1rem;
