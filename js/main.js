@@ -63,11 +63,12 @@ window.onload = function () {
   });
   // 게시판 이벤트 핸들러
   let listNoticeBoard = {};
-  for (let i = 1; i <= 100; i++) {
+  for (let i = 1; i <= 1000; i++) {
     listNoticeBoard[`notice${i}`] = {
       order: i,
       title: `공지사항 ${i}`,
-      writer: `빕잌휴츀힌 마쉬깨똬${i}`,
+      link: `#none`,
+      writer: `빕잌휴츀힌 마쉬깨똬`,
       date: `2020-01-01`,
       thumbsUp: i
     }
@@ -101,10 +102,10 @@ window.onload = function () {
     noticeBoardUl.appendChild(firstNode)
     for (let i = renderingLength; i > 0; i--) {
       let li = document.createElement('li');
-      let {order, title, writer, date, thumbsUp} = object[`notice${listNoticeBaordLength - i + 1 - (renderingStartPoint * 12)}`];
+      let {order, title, link, writer, date, thumbsUp} = object[`notice${listNoticeBaordLength - i + 1 - (renderingStartPoint * 12)}`];
       li.innerHTML = `
         <span class="post_order">${order}</span>
-        <a href="#none" class="post_title">${title}</a>
+        <a href="${link}" class="post_title">${title}</a>
         <span class="post_writer">${writer}</span>
         <span class="post_date">${date}</span>
         <span class="post_thumbs_up">${thumbsUp}</span>
@@ -119,7 +120,32 @@ window.onload = function () {
   let buttonTab = document.querySelector('main .inner .notice_board .button-tab');
   buttonTab.addEventListener('click', function (e) {
     e.preventDefault();
-    
+    // fa-angle-left / right 클릭시 이벤트 
+    if (e.target.classList.contains('fa-angle-left')) {
+      console.log('left');
+      if (tabNumberButton[0].textContent === '1') {
+        return;
+      } else {
+        for (let i = 0; i < tabNumberButton.length; i++) {
+          tabNumberButton[i].textContent = +tabNumberButton[i].textContent - 10;
+        }
+      }   
+    } else if (e.target.classList.contains('fa-angle-right')) {
+      console.log('right');
+      if (false) {
+        return;
+      } else {
+        for (let i = 0; i < tabNumberButton.length; i++) {
+          tabNumberButton[i].textContent = +tabNumberButton[i].textContent + 10;
+        }
+      }
+    }
+    // fa-angle-double-left / right 클릭시 이벤트 right는 아직 미구현
+    if (e.target.classList.contains('fa-angle-double-left')) {
+      for (let i = 0; i < tabNumberButton.length; i++) {
+        tabNumberButton[i].textContent = i+1;
+      }
+    };
   });
   // tab_number event rendering
   for (let index of tabNumberButton) {
