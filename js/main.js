@@ -121,6 +121,11 @@ window.onload = function () {
   buttonTab.addEventListener('click', function (e) {
     e.preventDefault();
     // fa-angle-left / right 클릭시 이벤트 
+    if (e.target.classList.contains('fa')) {
+      for (let index of tabNumberButton) {
+        index.classList.remove('active');
+      }
+    }
     if (e.target.classList.contains('fa-angle-left')) {
       console.log('left');
       if (tabNumberButton[0].textContent === '1') {
@@ -153,6 +158,10 @@ window.onload = function () {
       e.preventDefault(); /* a 태그 기능 상실 */
       noticeBoardUl.innerHTML= '';
       calcRendering(noticeBoardUl, listNoticeBoard, renderingLength, listNoticeBaordLength, +e.target.textContent - 1);
+      for (let index of tabNumberButton) {
+        index.classList.remove('active');
+      }
+      e.target.classList.add('active');
     });
   };
   // scroll event 

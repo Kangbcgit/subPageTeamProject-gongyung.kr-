@@ -1,0 +1,22 @@
+@media (max-width:768px) {
+  .swiper-footer .swiper-footer .swiper-wrapper {
+    height: 55px;
+  }
+
+  .swiper-footer .swiper-wrapper .swiper-slide {
+    border: 1px solid #000;
+    height: 55px;
+  }
+
+  .footer .banner-corp {
+    display: none;
+  }
+
+  footer .banner-corp .hidden {
+    display: flex;
+  }
+
+  footer .banner-corp .hidden::after {
+    display: block;
+  }
+}
