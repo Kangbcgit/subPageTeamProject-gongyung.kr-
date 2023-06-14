@@ -1,15 +1,18 @@
 .blur {
+  position: fixed;
   display: none;
+  top: 0;left: 0;
   width: 100vw;
   height: 100vh;
   z-index: 9;
+  opacity: 0;
+  transition: 0.3s;
 }
 .blur.active {
-  position: fixed;
-  top: 0;left: 0;
+  display: block;
   background: #00000040;
   backdrop-filter: blur(2px);
-  display: block;
+  opacity: 1;
 }
 
 header {

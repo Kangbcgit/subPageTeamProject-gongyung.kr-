@@ -152,8 +152,13 @@ window.onload = function () {
     index.addEventListener('click', function (e) {
       e.preventDefault(); /* a 태그 기능 상실 */
       noticeBoardUl.innerHTML= '';
-      calcRendering(noticeBoardUl, listNoticeBoard, renderingLength, listNoticeBaordLength, +e.target.textContent);
+      calcRendering(noticeBoardUl, listNoticeBoard, renderingLength, listNoticeBaordLength, +e.target.textContent - 1);
     });
   };
-
+  // scroll event 
+  // window.addEventListener('scroll', function () {
+  //   if (window.scrollY > 0) {
+  //     document.querySelector('header').style.cssText = `position: fixed; top: 0; width: 100%;`;
+  //   }
+  // });
 }

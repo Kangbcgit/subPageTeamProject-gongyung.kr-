@@ -22,8 +22,11 @@ main .inner aside {
 main .inner .notice_board h1 {
   display: block;
   width: 100%;
-  padding: 2rem 0 5rem 1rem;
+  padding: 2rem 0 3rem 1rem;
   font-size: var(--font-size-h1);
+}
+main .inner .notice_board .wrap-img {
+  margin-bottom: 5rem;
 }
 main .inner .notice_board .row_line{
   width: 100%;
@@ -153,7 +156,7 @@ main .notice_board .button-tab .wrap-tab_number .button-page {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 25px;
+  width: 40px;
   height: 100%;
 }
 main .notice_board .button-tab .wrap-tab_number .button-page:hover,
