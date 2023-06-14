@@ -1,7 +1,7 @@
 main {
   position: relative;
   margin-top: 6.25rem;
-  border: 1px solid rgb(120, 0, 255);
+  /* border: 1px solid rgb(120, 0, 255); */
   height: 1000px;
 }
 
@@ -9,6 +9,7 @@ main .inner {
   position: relative;
   /* border: 1px solid #000; */
   height: 1000px;
+  /* border: 1px solid red; */
 }
 
 main .inner aside {
@@ -30,25 +31,28 @@ main .inner .notice_board .row_line{
   background: #000;
 }
 main li {
-  padding: 0 2rem;
+  padding: 0 1rem;
   height: 50px;
   width: 100%;
-  border: 1px solid #000;
+  border-bottom: 1px solid #b4b4b4;
 }
 main li::before {
   content: '';
   display: block;
   clear: both;
 }
-main ul li:nth-child(1) span {
+main ul li:nth-child(1) span, 
+main ul li:nth-child(1) a {
   justify-content: center;
 }
 main li a {
   display: block;
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
 }
-main li a span {
+/* main ul li 아래의 영역별 속성먹이기 */
+main li span,
+main li a{
   display: flex;
   align-items: center;
   float: left;
@@ -56,21 +60,26 @@ main li a span {
   /* border: 1px solid #000; */
 }
 main li span.post_order,
-main li span.post_title {
+main li a.post_title {
   font-size: var(--header-font-size);
 }
 main li span.post_order {
   width: 5%;
+  justify-content: center;
 }
-main li span.post_title {
+main li a.post_title {
   width: 60%;
 }
-main li:hover span.post_title {
+main li a.post_title:hover {
   text-decoration: underline;
   text-decoration-color: #ed3e3e;
 }
+main li:nth-child(1) a.post_title:hover {
+  text-decoration: none;
+}
 main li span.post_writer {
   width: 10%;
+  margin-right: 5%;
 }
 main li span.post_date {
   width: 10%;
@@ -80,4 +89,61 @@ main li span.post_like {
   float: right;
   width: 5%;
   justify-content: center;
+}
+/* 글쓰기 버튼 */
+main .wrap-button {
+  width: 100%;
+  height: 52px;
+  /* border: 1px solid #000; */
+  margin: 1rem 0;
+}
+main .wrap-button::before {
+  content: '';
+  clear: both;
+  display: block;
+}
+main .wrap-button a.button-write {
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 50px;
+  /* border: 1px solid #000; */
+  color: #fff;
+  background: #ed3e3e;
+  border-radius: 2px;
+}
+/* tab number */
+main .notice_board .button-tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid #000; */
+  height: 25px;
+}
+main .notice_board .button-tab i {
+  font-size: var(--header-font-size);));
+}
+main .notice_board .button-tab .left{
+  margin-right: 1rem;
+}
+main .notice_board .button-tab .right{
+  margin-left: 1rem;
+}
+main .notice_board .button-tab .wrap-tab_number {
+  display: flex;
+  /* width: 25px; */
+  margin: 0 1rem;
+}
+main .notice_board .button-tab .wrap-tab_number .button-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 100%;
+}
+main .notice_board .button-tab .wrap-tab_number .button-page:hover,
+main .notice_board .button-tab i:hover {
+  color: #ed3e3e;
 }
