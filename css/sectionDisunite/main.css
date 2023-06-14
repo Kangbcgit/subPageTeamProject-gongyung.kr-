@@ -37,7 +37,10 @@ main li {
   padding: 0 1rem;
   height: 50px;
   width: 100%;
-  border-bottom: 1px solid #b4b4b4;
+  border-bottom: 1px solid #dbdbdb;
+}
+main li:nth-child(2n -1) {
+  border-bottom: 1px solid #838383;
 }
 main li::before {
   content: '';
