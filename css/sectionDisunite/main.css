@@ -30,6 +30,9 @@ main .inner .notice_board .row_line{
   height: 2px;
   background: #000;
 }
+main .inner .notice_board ul {
+  height: calc(50px * 13);
+}
 main li {
   padding: 0 1rem;
   height: 50px;
@@ -85,7 +88,7 @@ main li span.post_date {
   width: 10%;
   justify-content: center;
 }
-main li span.post_like {
+main li span.post_thumbs_up {
   float: right;
   width: 5%;
   justify-content: center;

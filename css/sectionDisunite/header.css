@@ -115,14 +115,14 @@ header .inner .burger .line {
   bottom: 0;
 }
 /* burger js active toggle*/
-.burger.active.line1 {
+.burger.active .line1 {
   top: 50%;
   transform: translateY(-50%) rotate(45deg);
 }
-.burger.active.line2 {
+.burger.active .line2 {
   opacity: 0;
 }
-.burger.active.line3 {
+.burger.active .line3 {
   bottom: 50%;
   transform: translateY(50%) rotate(-45deg);
 }
