@@ -58,3 +58,18 @@
     width: 30px;
   }
 }
+@media (max-width:428px) {
+  main ul li span.post_writer{
+    width: 35%;
+    margin-right: 0;
+  }
+  main ul li span.post_date{
+    width: 27.5%;
+  }
+  main .notice_board .button-tab i.fa::before {
+    width: 10px;
+  }
+  main .notice_board .button-tab .wrap-tab_number {
+    margin: 0;
+  }
+}

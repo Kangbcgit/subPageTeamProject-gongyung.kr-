@@ -90,17 +90,8 @@ window.onload = function () {
     noticeBoardUl = document.querySelector('main .inner .notice_board ul'),
     renderingLength = 12,
     listNoticeBaordLength = Object.keys(listNoticeBoard).length;
-  let calcRendering = function (appendTarget, object, renderingLength, listNoticeBaordLength ,renderingStartPoint) {
-    let firstNode = document.createElement('li');
-    firstNode.classList.add('top');
-    firstNode.innerHTML = `
-      <span class="post_order">No</span>
-      <a class="post_title">제목</a>
-      <span class="post_writer">글쓴이</span>
-      <span class="post_date">작성시간</span>
-      <span class="post_thumbs_up">좋아요</span>
-    `;
-    noticeBoardUl.appendChild(firstNode)
+  let calcRendering = function (prependtarget, object, renderingLength, listNoticeBaordLength ,renderingStartPoint) {
+    
     for (let i = renderingLength; i > 0; i--) {
       let li = document.createElement('li');
       let {order, title, link, writer, date, thumbsUp} = object[`notice${listNoticeBaordLength - i + 1 - (renderingStartPoint * 12)}`];
@@ -111,8 +102,18 @@ window.onload = function () {
         <span class="post_date">${date}</span>
         <span class="post_thumbs_up">${thumbsUp}</span>
         `;
-      appendTarget.appendChild(li);
+      prependtarget.prepend(li);
     }
+    let firstNode = document.createElement('li');
+    firstNode.classList.add('top');
+    firstNode.innerHTML = `
+      <span class="post_order">No</span>
+      <a class="post_title">제목</a>
+      <span class="post_writer">글쓴이</span>
+      <span class="post_date">작성시간</span>
+      <span class="post_thumbs_up">좋아요</span>
+    `;
+    noticeBoardUl.prepend(firstNode)
   }
   // first rendering
   calcRendering(noticeBoardUl, listNoticeBoard, renderingLength, listNoticeBaordLength, 0);
