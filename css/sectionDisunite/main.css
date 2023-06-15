@@ -131,7 +131,7 @@ main .notice_board .button-tab {
   height: 25px;
 }
 main .notice_board .button-tab i.fa {
-  font-size: var(--font-size-h1);
+  font-size: 1.5rem;
   display: inline-block
   /* width: 5%; */
 }
