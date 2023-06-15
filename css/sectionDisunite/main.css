@@ -49,8 +49,8 @@ main li::before {
   display: block;
   clear: both;
 }
-main ul li:nth-child(1) span, 
-main ul li:nth-child(1) a {
+main ul li.top span, 
+main ul li.top a {
   justify-content: center;
 }
 main li a {

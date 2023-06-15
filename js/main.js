@@ -114,6 +114,7 @@ window.onload = function () {
       <span class="post_thumbs_up">좋아요</span>
     `;
     noticeBoardUl.prepend(firstNode)
+    if (window.innerWidth <= 768) document.querySelector('ul .top').style.display = 'none';
   }
   // first rendering
   calcRendering(noticeBoardUl, listNoticeBoard, renderingLength, listNoticeBaordLength, 0);
@@ -160,7 +161,7 @@ window.onload = function () {
       e.preventDefault(); /* a 태그 기능 상실 */
       noticeBoardUl.innerHTML= '';
       calcRendering(noticeBoardUl, listNoticeBoard, renderingLength, listNoticeBaordLength, +e.target.textContent - 1);
-      for (let index of tabNumberButton) {
+      for (let index of tabNumberButton) {9
         index.classList.remove('active');
       }
       e.target.classList.add('active');
