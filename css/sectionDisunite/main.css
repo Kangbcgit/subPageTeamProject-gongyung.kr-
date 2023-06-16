@@ -49,9 +49,14 @@ main li::before {
   display: block;
   clear: both;
 }
-main ul li.top span, 
+main li.top {
+  /* justify-content: space-between; */
+}
 main ul li.top a {
   justify-content: center;
+}
+main ul li.top a span {
+  justify-content: start;
 }
 main li a {
   display: block;
@@ -67,9 +72,21 @@ main li a{
   height: 100%;
   /* border: 1px solid #000; */
 }
-main li span.post_order,
+main li>a>span {
+  display: inline;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 49px;
+  color: #000;
+  line-clamp: 1;
+}
+main li span.post_order {
+  font-size: 1rem;
+}
 main li a.post_title {
   font-size: var(--header-font-size);
+  justify-content: start;
 }
 main li span.post_order {
   width: 5%;
@@ -78,24 +95,25 @@ main li span.post_order {
 main li a.post_title {
   width: 60%;
 }
-main li a.post_title:hover {
+main li a.post_title span:hover {
   text-decoration: underline;
   text-decoration-color: #ed3e3e;
 }
-main li:nth-child(1) a.post_title:hover {
+main li:nth-child(1) a.post_title span:hover {
   text-decoration: none;
 }
 main li span.post_writer {
   width: 10%;
+  justify-content: center;
   margin-right: 5%;
 }
 main li span.post_date {
   width: 10%;
   justify-content: center;
 }
-main li span.post_thumbs_up {
+main li span.post_view {
   float: right;
-  width: 5%;
+  width: 10%;
   justify-content: center;
 }
 /* 글쓰기 버튼 */
@@ -114,7 +132,6 @@ main .wrap-button a.button-write {
   float: right;
   display: flex;
   align-items: center;
-  justify-content: center;
   width: 100px;
   height: 50px;
   /* border: 1px solid #000; */
@@ -129,6 +146,7 @@ main .notice_board .button-tab {
   align-items: center;
   /* border: 1px solid #000; */
   height: 25px;
+  margin-top: 2rem;
 }
 main .notice_board .button-tab i.fa {
   font-size: 1.5rem;

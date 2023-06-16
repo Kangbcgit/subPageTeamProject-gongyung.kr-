@@ -28,6 +28,7 @@
   }
   main ul li span.post_writer{
     width: 27.5%;
+    justify-content: start;
     margin-right: 0;
   }
   main ul li span.post_writer::before {
@@ -44,18 +45,21 @@
     font-family: "FontAwesome";
     margin-right: 1%;
   }
-  main ul li span.post_thumbs_up {
+  main ul li span.post_view {
     width: 20%;
     float: left;
-    justify-content: start;
+    justify-content: center;
   }
-  main ul li span.post_thumbs_up::before {
-    content: "\f087";
+  main ul li span.post_view::before {
+    content: "\f06e";
     font-family: "FontAwesome";
     margin-right: 1%;
   }
   main .notice_board .button-tab .wrap-tab_number .button-page {
     width: 30px;
+  }
+  main li>a>span {
+    line-height: inherit;
   }
 }
 @media (max-width:428px) {

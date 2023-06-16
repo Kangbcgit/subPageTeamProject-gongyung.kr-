@@ -71,16 +71,113 @@ window.onload = function () {
   });
   // 게시판 이벤트 핸들러
   let listNoticeBoard = {};
-  for (let i = 1; i <= 1000; i++) {
+  for (let i = 1; i <= 988; i++) {
     listNoticeBoard[`notice${i}`] = {
       order: i,
       title: `공지사항 ${i}`,
       link: `#none`,
-      writer: `빕잌휴츀힌 마쉬깨똬`,
+      writer: `행정담당`,
       date: `2020-01-01`,
-      thumbsUp: i
+      view: i
     }
   }
+  listNoticeBoard[`notice1000`] = {
+      order: 1000,
+      title: `2023 전국 산·학·연 협력 「정부육성 창업기업 제품 통합지원」 사업 참여기업 모집 공고`,
+      link: `#none`,
+      writer: `행정담당`,
+      date: `2023-04-03`,
+      view: 42
+    };
+  listNoticeBoard[`notice999`] = {
+      order: 999,
+      title: `[동반위-대구 동반성장 페어] 혁신기술 구매상담회 참여 중소기업 모집 안내(~04.05)`,
+      link: `#none`,
+      writer: `행정담당`,
+      date: `2023-03-28`,
+      view: 18
+    };
+  listNoticeBoard[`notice998`] = {
+      order: 998,
+      title: `[중기유통센터] 2023 TV홈쇼핑 방송지원사업 1차 참여기업 모집 공고`,
+      link: `#none`,
+      writer: `행정담당`,
+      date: `2023-03-23`,
+      view: 49
+    };
+  listNoticeBoard[`notice997`] = {
+      order: 997,
+      title: `2023년 공영홈쇼핑 「공익적 지역홍보 광고지원 사업」 선정 결과 공고`,
+      link: `#none`,
+      writer: `행정담당`,
+      date: `2023-03-21`,
+      view: 23
+    };
+  listNoticeBoard[`notice996`] = {
+      order: 996,
+      title: `2023 「전국 지역 특화제품 판로지원」 사업 참여기업 모집 공고`,
+      link: `#none`,
+      writer: `행정담당`,
+      date: `2023-03-20`,
+      view: 62
+    };
+  listNoticeBoard[`notice995`] = {
+      order: 995,
+      title: `제2회 「국내 우수 아이디어 혁신기업제품 공모전」 모집 공고`,
+      link: `#none`,
+      writer: `행정담당`,
+      date: `2023-03-13`,
+      view: 95
+    };
+  listNoticeBoard[`notice994`] = {
+      order: 994,
+      title: `2023 「사회적기업 및 장애인기업 판로지원 사업」 참여기업 모집 공고`,
+      link: `#none`,
+      writer: `행정담당`,
+      date: `2023-02-27`,
+      view: 17
+    };
+  listNoticeBoard[`notice993`] = {
+      order: 993,
+      title: `2023 국가대표 중소기업 브랜드K 기업 모집공고`,
+      link: `#none`,
+      writer: `행정담당`,
+      date: `2023-02-20`,
+      view: 12
+    };
+  listNoticeBoard[`notice992`] = {
+      order: 992,
+      title: `공지사항`,
+      link: `#none`,
+      writer: `행정담당`,
+      date: `2023-02-15`,
+      view: 92
+    };
+  listNoticeBoard[`notice991`] = {
+      order: 991,
+      title: `2023 공영홈쇼핑 「공익적 지역홍보 광고지원 사업」 참여기관 모집 공고`,
+      link: `#none`,
+      writer: `행정담당`,
+      date: `2023-01-09`,
+      view: 35
+    };
+  listNoticeBoard[`notice990`] = {
+      order: 990,
+      title: `[알림] 2022년 시청자 의견 반영 결과 정리 공지`,
+      link: `#none`,
+      writer: `행정담당`,
+      date: `2020-01-05`,
+      view: 51
+    };
+  listNoticeBoard[`notice989`] = {
+      order: 989,
+      title: `협력사 대표이사께 드리는 말씀`,
+      link: `#none`,
+      writer: `행정담당`,
+      date: `2020-01-01`,
+      view: 21
+    };
+    console.log(listNoticeBoard);
   // tab_number 생성
   // let tabNumber = document.querySelectorAll('main .inner .notice_board .button-tab .wrap-tab_number');
   // if (Object.keys(listNoticeBoard).length === 0) {
@@ -101,13 +198,13 @@ window.onload = function () {
     
     for (let i = renderingLength; i > 0; i--) {
       let li = document.createElement('li');
-      let {order, title, link, writer, date, thumbsUp} = object[`notice${listNoticeBaordLength - i + 1 - (renderingStartPoint * 12)}`];
+      let {order, title, link, writer, date, view} = object[`notice${listNoticeBaordLength - i + 1 - (renderingStartPoint * 12)}`];
       li.innerHTML = `
         <span class="post_order">${order}</span>
-        <a href="${link}" class="post_title">${title}</a>
+        <a href="${link}" class="post_title"><span>${title}</span></a>
         <span class="post_writer">${writer}</span>
         <span class="post_date">${date}</span>
-        <span class="post_thumbs_up">${thumbsUp}</span>
+        <span class="post_view">${view}</span>
         `;
       prependtarget.prepend(li);
     }
@@ -115,10 +212,10 @@ window.onload = function () {
     firstNode.classList.add('top');
     firstNode.innerHTML = `
       <span class="post_order">No</span>
-      <a class="post_title">제목</a>
+      <a class="post_title"><span>제목</span></a>
       <span class="post_writer">글쓴이</span>
       <span class="post_date">작성시간</span>
-      <span class="post_thumbs_up">좋아요</span>
+      <span class="post_view">좋아요</span>
     `;
     noticeBoardUl.prepend(firstNode)
     if (window.innerWidth <= 768) document.querySelector('ul .top').style.display = 'none';
