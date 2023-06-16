@@ -22,6 +22,13 @@ window.onload = function () {
       e.target.parentElement.nextElementSibling.classList.toggle('active');
     }
   });
+  let burgerMenu = document.querySelector('header .burger-menu');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 0) {
+      burgerMenu.classList.remove('active');
+      burger.classList.remove('active');
+    }
+  });
   // .burger-menu .title 이벤트 핸들러
   let angleChanger = function (target) {
     if (target.classList.contains('fa-angle-left')) {

@@ -64,10 +64,12 @@ header .inner .wrap-gnb > a {
 header .inner .wrap-gnb .wrap-sub_menu {
   position: absolute;
   top: var(--header-height);
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   height: 0;
+  width: 100vw;
   overflow: hidden;
   background: #fff;
   transition: height 0.3s;
@@ -88,6 +90,8 @@ header .inner .wrap-gnb:hover .wrap-sub_menu {
   display: flex;
   width: var(--header-gnb-width);
   height: var(--header-height);
+  text-align: center;
+  line-height: 30px;
 }
 /* 버거버튼 */
 header .inner .burger {
@@ -97,88 +101,17 @@ header .inner .burger {
   height: 30px;
   cursor: pointer;
 }
-header .inner .burger .line {
-  position: absolute;
-  width: 100%;
-  height: 5px;
-  background: #ed3e3e;
-  transition: .3s;
-}
-.burger .line1 {
-  left: 0;
-  top: 0;
-}
-.burger .line2 {
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.burger .line3 {
-  left: 0;
-  bottom: 0;
-}
-/* burger js active toggle*/
-.burger.active .line1 {
-  top: 50%;
-  transform: translateY(-50%) rotate(45deg);
-}
-.burger.active .line2 {
-  opacity: 0;
-}
-.burger.active .line3 {
-  bottom: 50%;
-  transform: translateY(50%) rotate(-45deg);
-}
-/* burgermenu */
 .burger-menu {
   position: absolute;
   top: var(--header-height);
-  width: 100%;
-  left: 0;
-  max-height: 0;
-  overflow: auto;
+  right: 0;
+  height: 100vh;
+  width: 0;
+  overflow: hidden;
   box-shadow: inset 0 6px 2px -4px #ed3e3e;
   background: #fff;
   border: 1px solid #ed3e3e;
-  transition: max-height .3s;
+  transition: .3s;
+  opacity: 0;
   z-index: 10;
-}
-.burger-menu.active {
-  max-height: 720px;
-}
-.burger-menu > .title{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: var(--header-height);
-  width: 100%;
-  border: 1px solid #ed3e3e;
-  font-weight: 500;
-  font-size: var(--header-font-size);
-  padding: 0 2rem;
-  cursor: pointer;
-  overflow: hidden;
-}
-.burger-menu .title i {
-  font-size: 2rem;
-  color: #ed3e3e;
-}
-.burger-menu .wrap-slide {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height .3s;
-}
-.burger-menu .wrap-slide.active {
-  max-height: calc(var(--header-height) * 3);
-}
-.burger-menu .wrap-slide a {
-  display: flex;
-  justify-content: start;
-  padding-left: 2rem;
-  height: var(--header-height);
-}
-.burger-menu .title:hover,
-.burger-menu .wrap-slide a:hover {
-  color: #ed3e3e;
-  font-weight: 700;
 }
